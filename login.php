@@ -25,18 +25,21 @@ if(Input::exists()){
 }
 ?>
 
+<div class='well'>
 <form action="" method="post">
+	
+	<div class="input-group">
+	  <span class="input-group-addon" id="username-icon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+	  <input type="text" class="form-control" placeholder="Username" aria-describedby="username-icon" name="username" autocomplete="off" value="<?php echo (Input::get('username')) ?>">
+	</div>
+	
+	<div class="input-group">
+	  <span class="input-group-addon" id="password-icon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+	  <input type="password" class="form-control" aria-describedby="password-icon" placeholder="Password" name="password" autocomplete="off" value="<?php echo (Input::get('password')) ?>">
+	</div>
+	
+	<input type="hidden" name="token" value="<?php echo Token::generate(); ?>"/>
+	<input class='form-control' type="submit" value="Login "/>
 
-    <div class="field">
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" autocomplete="off"/>
-    </div>
-
-    <div class="field">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" autocomplete="off"/>
-    </div>
-
-    <input type="hidden" name="token" value="<?php Token::generate(); ?>"/>
-    <input type="submit" value="Log in"/>
 </form>
+</div>

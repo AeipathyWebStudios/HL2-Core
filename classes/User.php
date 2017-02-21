@@ -15,4 +15,5 @@ class User{
             throw new Exception('There was an issue creating your account, please contact a developer.');
         }
     }
+
 }

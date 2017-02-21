@@ -1,35 +1,58 @@
 <?php
     require_once 'core/init.php';
 
-    if(Input::exists()){
-        $validate = new Validation();
-        $validation = $validate->check($_POST, array(
-            'username' => array(
-                'required' => true,
-                'min' => 4,
-                'max' => 20,
-                'unique' => 'users'
-            ),
-            'password' => array(
-                'required' => true,
-                'min' => 6,
-            ),
-            'confirm_password' => array(
-                'required' => true,
-                'matches' => 'password'
-            ),
-            'name' => array(
-                'required' => true,
-                'min' => 4,
-                'max' => 20,
-                'unique' => 'users'
-            ),
-        ));
+    if(Input::exists()) {
+        if (Token::check(Input::get('token'))) {
+            $validate = new Validation();
+            $validation = $validate->check($_POST, array(
+                'username' => array(
+                    'required' => true,
+                    'min' => 4,
+                    'max' => 20,
+                    'unique' => 'users'
+                ),
+                'password' => array(
+                    'required' => true,
+                    'min' => 6,
+                ),
+                'confirm_password' => array(
+                    'required' => true,
+                    'matches' => 'password'
+                ),
+                'name' => array(
+                    'required' => true,
+                    'min' => 4,
+                    'max' => 20,
+                    'unique' => 'users'
+                ),
+            ));
 
-        if($validation->passed()){
-            echo 'Passed';
-        }else{
-            print_r($validation->errors());
+            if ($validation->passed()) {
+                $user = new User();
+                $salt = Hash::salt(32);
+
+                try {
+                    $user->create(array(
+                        'username' => Input::get('username'),
+                        'password' => Hash::make(Input::get('password'), $salt),
+                        'salt' => $salt,
+                        'name' => Input::get('name'),
+                        'joined' => date('Y-m-d H:i:s'),
+                        'group' => 1
+                    ));
+
+                    Session::flash('home', 'You have been registered to HL2C');
+                    Redirect::to('index.php');
+
+                }catch(Exception $e){
+                    die($e->getMessage());
+                }
+
+            } else {
+                foreach($validation->errors() as $error){
+                    echo $error.'<br>';
+                }
+            }
         }
     }
 ?>
@@ -55,5 +78,6 @@
         <input type="text" name="name" id="name" autocomplete="off" value="<?php echo (Input::get('name')) ?>"/>
     </div>
 
+    <input type="hidden" name="token" value="<?php echo Token::generate(); ?>"/>
     <input type="submit" value="Register"/>
 </form>

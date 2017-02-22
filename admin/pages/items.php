@@ -2,7 +2,10 @@
 
 require_once 'core/init.php';
 
+include_once 'includes/header.php';
+
 $item = new Item();
+
 
 ?>
 
@@ -18,7 +21,11 @@ $item = new Item();
         </div>
         <!-- /.row -->
         <div class="row">
-
+            <?php
+            if($deagle){
+                var_dump($deagle);
+            }
+            ?>
         </div>
     </div>
     </div>

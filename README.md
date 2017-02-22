@@ -4,11 +4,7 @@ Hollow Life is a online strategy game based in the half life universe, in which 
 
 ## Getting Started
 
-Simply drag and drop the contents of the game into your web root, or in a directory.
-
-From there you will need to edit the configuartion opens in the class autoloader. Which can be found in;
-
-core/init.php
+Simply drag and drop the contents of the game into your web root, or into a web directory.
 
 ### Prerequisites
 
@@ -21,14 +17,45 @@ Bootstrap
 ## Installing
 
 ```
-1. Drop the contents into your web root or into a directory
+Drop the contents into your web root or into a directory
 
-2. Configure the MySQL in core/init.php replacing the dummy data with your data.
+Configure the MySQL in core/init.php replacing the dummy data with your data.
 
-3. You're good to go, for developers you will need to look at the API reference.
+You're good to go, for developers you will need to look at the API reference.
 
-4. Simply require_once 'core/init.php'; to any new pages you add.
+Simply require_once 'core/init.php'; to any new pages you add.
 ```
+
+### Documentation
+
+## Efficiently using Validation
+
+```
+
+	$validate = new Validation();
+	$validation = $validate->check($_POST, array(
+		'input_field' => array(
+			'required' => true,
+			'min' => 4, // Minimum of 4 characters
+			'max' => 20, // Maximum of 20 characters
+			'matches' => 'input_field' // input_field value in table data already exists.
+			'unique' => 'users' // Unique to the table 'users'
+		), 
+	));
+
+	if ($validation->passed()) {
+		// If the rules pass
+	} else {
+		foreach($validation->errors() as $error){ 
+			$error = ucfirst($error);
+			echo "<b style='color:red'>{$error}</b><br>";
+		}
+		echo '<hr>';
+	}
+	
+
+```
+
 
 ## Built With
 

@@ -28,3 +28,8 @@ require_once './functions/sanitize.php';
 include_once './header.php';
 
 $user = new User();
+$route = new Route();
+
+$route->add('/');
+$route->add('/register');
+$route->add('/login');

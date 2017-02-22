@@ -25,7 +25,7 @@ class Validation{
                 $value = trim($source[$item]);
 
                 if($rule == 'required' && empty($value)){
-                    $this->addErrors("{$item} is required");
+                    $this->addErrors("{$item} is a required field");
                 }else if(!empty($value)){
                     switch($rule){
                         case 'min':
@@ -60,7 +60,7 @@ class Validation{
 
         return $this;
     }
-
+	
     private function addErrors($error)
     {
         $this->_errors[] = $error;
@@ -70,6 +70,14 @@ class Validation{
     {
         return $this->_errors;
     }
+	
+	public function validationErrors(){
+		foreach($this->errors() as $error){ 
+            $error = ucfirst($error);
+            echo "<b style='color:red'>{$error}</b><br>";
+        }
+        echo '<hr>';
+	}
 
     public function passed()
     {

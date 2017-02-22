@@ -1,8 +1,6 @@
 <?php
-
 require_once 'core/init.php';
-include_once 'header.php';
-
+include_once 'includes/header.php';
 ?>
 
 <div class="intro-header">

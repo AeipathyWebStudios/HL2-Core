@@ -8,6 +8,7 @@ class Item{
     public function __construct($item = null)
     {
         $this->_db = DB::getInstance();
+        $this->_other();
     }
 
     public function create($fields = array())
@@ -40,14 +41,16 @@ class Item{
         return false;
     }
 
-    public function getAll($table)
+    public function getAll()
     {
-        $items = $this->_db->get('items', null);
+        $data = $this->_db->get('items', null);
+        $this->_data = $data->results();
+        return $this->_data;
+    }
 
-        foreach($items as $item){
-
-        }
-
+    public function data()
+    {
+        return $this->_data;
     }
 
 }

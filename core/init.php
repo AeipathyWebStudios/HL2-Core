@@ -14,7 +14,8 @@ $GLOBALS['config'] = array(
         'cookie_expiry' => 604800
     ),
     'session' => array(
-        'session_name' => 'user'
+        'session_name' => 'user',
+        'token_name' => 'csrf'
     )
 );
 
@@ -22,4 +23,8 @@ spl_autoload_register(function($class){
     require_once 'classes/' . $class . '.php';
 });
 
-require_once 'functions/sanitize.php';
+require_once './functions/sanitize.php';
+
+include_once './header.php';
+
+$user = new User();

@@ -26,36 +26,67 @@ You're good to go, for developers you will need to look at the API reference.
 Simply require_once 'core/init.php'; to any new pages you add.
 ```
 
-### Documentation
+## Documentation
 
-## Efficiently using Validation
+### Efficiently using Validation
 
+* **Instantiate a new instance of the validation class.**
 ```
-
 	$validate = new Validation();
-	$validation = $validate->check($_POST, array(
-		'input_field' => array(
-			'required' => true,
-			'min' => 4, // Minimum of 4 characters
-			'max' => 20, // Maximum of 20 characters
-			'matches' => 'input_field' // input_field value in table data already exists.
-			'unique' => 'users' // Unique to the table 'users'
-		), 
-	));
+```
 
-	if ($validation->passed()) {
-		// If the rules pass
-	} else {
-		foreach($validation->errors() as $error){ 
-			$error = ucfirst($error);
-			echo "<b style='color:red'>{$error}</b><br>";
-		}
-		echo '<hr>';
-	}
-	
+* **Call the check method in the validation class, and pass in an input 
+field with the rules that you want to assign to it.**
+```
+$validation = $validate->check($_POST, array(
+    'input_field' => array(
+        'required' => true, // Field is required
+        'min' => 4, // Minimum of 4 characters
+        'max' => 20, // Maximum of 20 characters
+        'matches' => 'input_field' // Check if input_field in the table matches data from the form
+        'unique' => 'test' // Unique to the table 'test'
+    ), 
+));
+```
+
+* **In order to make use of this functionality, you must use logic to check whether
+ or not the validation has actually passed.**
+```
+if ($validation->passed()) {
+    // If the rules pass
+} else {
+    foreach($validation->errors() as $error){ 
+        $error = ucfirst($error);
+        echo "<b style='color:red'>{$error}</b><br>";
+    }
+}
 
 ```
 
+### Inserting data to database
+
+* **Instantiate a new instance of the class you want to insert data for.**
+
+```
+$class = new Class();
+```
+
+* **Get the field post data that you want to send**
+```
+$foo = $item->getField('foo');
+```
+
+* **Using the class you instantiated run the create method, and pass as many array values
+as you want.**
+
+```$xslt
+$class->create(array(
+            'foo' => $foo
+        ));
+```
+
+And it's that simple, make sure that your fields exactly match your database columns otherwise 
+there will be complications.
 
 ## Built With
 

@@ -1,7 +1,3 @@
-<?php
-require_once 'core/init.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,26 +57,16 @@ require_once 'core/init.php';
 					<li>
                         <a href="register.php">Create Citizen</a>
                     </li>
-
-                    <?php $user = new User();
-                    if($user->isLoggedIn()){ echo $user->data()->username; ?>
-                        <li>
-                            <a href="profile.php">Your account</a>
-                        </li>
                         <li>
                             <a href="logout.php">Logout</a>
                         </li>
-                    <?php }else {?>
                         <li>
                             <a href="login.php">Login</a>
                         </li>
-                    <?php } ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-
-
     <!-- /.intro-header -->

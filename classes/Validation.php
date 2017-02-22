@@ -11,6 +11,13 @@ class Validation{
         $this->_db = DB::getInstance();
     }
 
+    /**
+     * Check against validation rules
+     * @param $source
+     * @param array $items
+     * @return $this
+     */
+
     public function check($source, $items = array())
     {
         foreach($items as $item => $rules){

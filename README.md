@@ -21,28 +21,23 @@ Bootstrap
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
 
-Say what the step will be
-
-```
 1. Drop the contents into your web root or into a directory
 ```
 
 2. Configure the MySQL in core/init.php replacing the dummy data with your data.
-
 ```
+
 3. You're good to go, for developers you will need to look at the API reference.
 ```
 
 4. Simply require_once 'core/init.php'; to any new pages you add.
-
+```
 
 ## Built With
 
 * [Bootstrap](http://www.bootstrap.com/) - The design framework used
-* [Git Bash](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - 
+* [Git Bash](https://git-for-windows.github.io/) - Git accessibility
 
 ## Contributing
 

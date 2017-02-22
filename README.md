@@ -1,17 +1,22 @@
-# Project Title
+# Hollow Life (HL2:C)
 
-One Paragraph of project description goes here
+Hollow Life is a online strategy game based in the half life universe, in which the player takes on the role of an ordinary citizen.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Simply drag and drop the contents of the game into your web root, or in a directory.
+
+From there you will need to edit the configuartion opens in the class autoloader. Which can be found in;
+
+core/init.php
 
 ### Prerequisites
 
 What things you need to install the software and how to install them
 
-```
-Give examples
+Any PHP version (Works best with 7)
+Any MySQL software (MariaDB, Phpmyadmin, MongoDB)
+Bootstrap
 ```
 
 ### Installing
@@ -21,67 +26,38 @@ A step by step series of examples that tell you have to get a development env ru
 Say what the step will be
 
 ```
-Give the example
+1. Drop the contents into your web root or into a directory
 ```
 
-And repeat
+2. Configure the MySQL in core/init.php replacing the dummy data with your data.
 
 ```
-until finished
+3. You're good to go, for developers you will need to look at the API reference.
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+4. Simply require_once 'core/init.php'; to any new pages you add.
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Bootstrap](http://www.bootstrap.com/) - The design framework used
+* [Git Bash](https://maven.apache.org/) - Dependency Management
+* [ROME](https://rometools.github.io/rome/) - 
 
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Alex Walton** - *On-going PHP Developer* - [Aeipathy Web Studios](https://facebook.com/AeipathyWebStudios)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/AeipathyWebStudios/HL2-C/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+In progress
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* Hat tip to Code Course for running me through and explaining their methods, I can now extend this functionality with ease.

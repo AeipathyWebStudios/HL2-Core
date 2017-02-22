@@ -17,19 +17,15 @@ What things you need to install the software and how to install them
 Any PHP version (Works best with 7)
 Any MySQL software (MariaDB, Phpmyadmin, MongoDB)
 Bootstrap
+
+## Installing
+
 ```
-
-### Installing
-
-
 1. Drop the contents into your web root or into a directory
-```
 
 2. Configure the MySQL in core/init.php replacing the dummy data with your data.
-```
 
 3. You're good to go, for developers you will need to look at the API reference.
-```
 
 4. Simply require_once 'core/init.php'; to any new pages you add.
 ```

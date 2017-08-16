@@ -1,112 +1,51 @@
-# Hollow Life (HL2:C)
+<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
-Hollow Life is a online strategy game based in the half life universe, in which the player takes on the role of an ordinary citizen.
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+</p>
 
-## Getting Started
+## About Laravel
 
-Simply drag and drop the contents of the game into your web root, or into a web directory.
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
 
-### Prerequisites
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-What things you need to install the software and how to install them
+Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
 
-Any PHP version (Works best with 7)
-Any MySQL software (MariaDB, Phpmyadmin, MongoDB)
-Bootstrap
+## Learning Laravel
 
-## Installing
+Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
 
-```
-Drop the contents into your web root or into a directory
+If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
 
-Configure the MySQL in core/init.php replacing the dummy data with your data.
+## Laravel Sponsors
 
-You're good to go, for developers you will need to look at the API reference.
+We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
 
-Simply require_once 'core/init.php'; to any new pages you add.
-```
-
-## Documentation
-
-### Efficiently using Validation
-
-* **Instantiate a new instance of the validation class.**
-```
-	$validate = new Validation();
-```
-
-* **Call the check method in the validation class, and pass in an input 
-field with the rules that you want to assign to it.**
-```
-$validation = $validate->check($_POST, array(
-    'input_field' => array(
-        'required' => true, // Field is required
-        'min' => 4, // Minimum of 4 characters
-        'max' => 20, // Maximum of 20 characters
-        'matches' => 'input_field' // Check if input_field in the table matches data from the form
-        'unique' => 'test' // Unique to the table 'test'
-    ), 
-));
-```
-
-* **In order to make use of this functionality, you must use logic to check whether
- or not the validation has actually passed.**
-```
-if ($validation->passed()) {
-    // If the rules pass
-} else {
-    foreach($validation->errors() as $error){ 
-        $error = ucfirst($error);
-        echo "<b style='color:red'>{$error}</b><br>";
-    }
-}
-
-```
-
-### Inserting data to database
-
-* **Instantiate a new instance of the class you want to insert data for.**
-
-```
-$class = new Class();
-```
-
-* **Get the field post data that you want to send**
-```
-$foo = $item->getField('foo');
-```
-
-* **Using the class you instantiated run the create method, and pass as many array values
-as you want.**
-
-```$xslt
-$class->create(array(
-            'foo' => $foo
-        ));
-```
-
-And it's that simple, make sure that your fields exactly match your database columns otherwise 
-there will be complications.
-
-## Built With
-
-* [Bootstrap](http://www.bootstrap.com/) - The design framework used
-* [Git Bash](https://git-for-windows.github.io/) - Git accessibility
+- **[Vehikl](http://vehikl.com)**
+- **[Tighten Co.](https://tighten.co)**
+- **[British Software Development](https://www.britishsoftware.co)**
+- **[Styde](https://styde.net)**
+- [Fragrantica](https://www.fragrantica.com)
+- [SOFTonSOFA](https://softonsofa.com/)
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
 
-## Authors
+## Security Vulnerabilities
 
-* **Alex Walton** - *On-going PHP Developer* - [Aeipathy Web Studios](https://facebook.com/AeipathyWebStudios)
-
-See also the list of [contributors](https://github.com/AeipathyWebStudios/HL2-C/contributors) who participated in this project.
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
 ## License
 
-In progress
-
-## Acknowledgments
-
-* Hat tip to Code Course for running me through and explaining their methods, I can now extend this functionality with ease.
+The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).

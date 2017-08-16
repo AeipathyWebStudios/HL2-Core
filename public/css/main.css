@@ -1,0 +1,36 @@
+/*
+	Main AWS CSS File 
+	Contains; Main element CSS
+*/
+
+body{ background-size:cover; }
+
+.money-stat{ color:green; font-size:19px; }
+
+.navbar-default .navbar-brand {
+    color: #fff;
+	font-size:26px;
+	font-family: sans-serif;
+}
+
+.navbar-default .navbar-brand:hover { color: #1c8fde; }
+
+.bg{ background-color:#fff; }
+.custom-width{ width:85%; }
+.page-heading{ color:#000; }
+
+.navbar-default {
+    background-color: #252548;
+    border-color: #1c8fde;
+}
+
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text { color:#fff; }
+.navbar-default .navbar-nav li>a:hover { color:#1c8fde; }
+
+.panel-body {
+    padding: 10px;
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+}
+
